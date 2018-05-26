@@ -5,6 +5,15 @@ Current modules:
 - Snackbar
 
 
+# Installation
+
+Just your regular
+
+`yarn add daemonite-material-additions`
+or
+`npm install --save daemonite-material-additions`
+
+
 ## Module: Snackbar
 The Snackbar module renders 'Snackbars' as demonstrated at http://daemonite.github.io/material/docs/4.1/material/snackbars/
 
