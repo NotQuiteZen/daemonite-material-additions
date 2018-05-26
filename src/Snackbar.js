@@ -68,12 +68,12 @@ export default class Snackbar {
         }
 
         // Add snackbarBody to the snackbar
-        settings.appendChild(snackbarBody);
+        snackbar.appendChild(snackbarBody);
 
 
         // Add the button
         if (settings.button) {
-            snackbar.appendChild(settings.button);
+            snackbar.innerHTML += settings.button;
         }
 
         return snackbar;
