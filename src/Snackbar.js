@@ -34,7 +34,6 @@ export default class Snackbar {
             // Set the timeout to remove the snackbar
             setTimeout(() => {
                 snackbar.classList.remove('show');
-                snackbar.removeClass('show');
                 setTimeout(() => snackbar.remove(), 200);
             }, settings.timeout);
         }
