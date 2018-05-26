@@ -50,7 +50,7 @@ export default class Snackbar {
         // Build the body div
         let snackbarBody = document.createElement('div');
         snackbarBody.classList.add('snackbar-body');
-        snackbarBody.innerHTML(settings.html);
+        snackbarBody.innerHTML = settings.html;
 
         // Add classes
         if (settings.classes) {
