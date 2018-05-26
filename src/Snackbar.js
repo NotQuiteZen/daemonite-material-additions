@@ -9,6 +9,8 @@ export default class Snackbar {
      */
     static render(settings_) {
 
+
+        // Set defaults
         let settings = Object.assign({}, {
             timeout: 4000,
             html: '',
@@ -17,13 +19,13 @@ export default class Snackbar {
         // Generate the div
         let snackbar = this.generateSnackbarComponent(settings);
 
-        // Append it tot he body
-        snackbar.appendTo(document.body);
+        // Append it to the body
+        document.body.appendChild(snackbar);
 
         // Added the show class for the animation
         // Delegation because
         setTimeout(() => {
-            snackbar.addClass('show');
+            snackbar.classList.add('show');
         }, 1);
 
         // Do we have a timeout?
@@ -31,6 +33,7 @@ export default class Snackbar {
 
             // Set the timeout to remove the snackbar
             setTimeout(() => {
+                snackbar.classList.remove('show');
                 snackbar.removeClass('show');
                 setTimeout(() => snackbar.remove(), 200);
             }, settings.timeout);
@@ -69,7 +72,6 @@ export default class Snackbar {
 
         // Add snackbarBody to the snackbar
         snackbar.appendChild(snackbarBody);
-
 
         // Add the button
         if (settings.button) {
