@@ -57,7 +57,7 @@ export default class Snackbar {
 
             // Normalize to an array
             if (typeof settings.classes === 'string') {
-                settings.classes = [settings.classes];
+                settings.classes = settings.classes.split(' ');
             }
 
             // Iterate
