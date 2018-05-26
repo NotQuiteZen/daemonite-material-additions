@@ -4,6 +4,7 @@ Additional modules for Daemonite's Material Bootstrap. This repo exists because 
 Current modules:
 - Snackbar
 
+<hr>
 
 # Installation
 
@@ -13,6 +14,7 @@ Just your regular
 or
 `npm install --save daemonite-material-additions`
 
+<hr>
 
 ## Module: Snackbar
 The Snackbar module renders 'Snackbars' as demonstrated at http://daemonite.github.io/material/docs/4.1/material/snackbars/
@@ -29,3 +31,8 @@ Snackbar.render({
    timeout: 10000, // Default = 4000ms
 });
 ```
+
+<hr>
+
+# Thanks
+Thanks alot to the folks at https://github.com/Daemonite and their https://github.com/Daemonite/material repo, it's literally the best out there, I've seen em all! 
