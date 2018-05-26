@@ -1,0 +1,9 @@
+{
+  "name": "daemonite-material-additions",
+  "version": "1.0.0",
+  "description": "Additional modules for Daemonite's Material Bootstrap",
+  "main": "index.js",
+  "repository": "https://github.com/NotQuiteZen/daemonite-material-additions",
+  "author": "Milan van As (milanvanas@gmail.com)",
+  "license": "MIT"
+}
