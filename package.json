@@ -1,6 +1,6 @@
 {
   "name": "daemonite-material-additions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Additional modules for Daemonite's Material Bootstrap",
   "main": "index.js",
   "repository": "https://github.com/NotQuiteZen/daemonite-material-additions",
@@ -22,5 +22,4 @@
     "build": "rimraf lib && webpack --env=development",
     "build:prod": "rimraf lib && webpack --env=production"
   }
-
 }
