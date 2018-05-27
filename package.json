@@ -1,6 +1,6 @@
 {
     "name": "daemonite-material-additions",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Additional modules for Daemonite's Material Bootstrap",
     "main": "index.js",
     "repository": "https://github.com/NotQuiteZen/daemonite-material-additions",
