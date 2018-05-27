@@ -2,21 +2,27 @@ module.exports = env => {
 
     console.log(`Running in ${env} mode.`);
 
+    let entries = env === 'production' ? {'lib/daemonite-material-additions': './index.js'} : {'dev': './dev.js'};
+
     return {
 
         mode: env,
 
-        entry: {
-            'daemonite-material-additions': './index.js',
-        },
+        entry: entries,
 
         output: {
-            path: __dirname + '/lib',
+            path: __dirname,
             filename: '[name].js',
             library: 'daemonite-material-additions',
             libraryTarget: 'umd',
             umdNamedDefine: true
         },
+
+        devServer: {
+            publicPath: '/',
+            host: "0.0.0.0"
+        },
+
         module: {
             rules: [
                 {
