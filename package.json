@@ -1,25 +1,26 @@
 {
-  "name": "daemonite-material-additions",
-  "version": "1.0.1",
-  "description": "Additional modules for Daemonite's Material Bootstrap",
-  "main": "index.js",
-  "repository": "https://github.com/NotQuiteZen/daemonite-material-additions",
-  "author": "Milan van As (milanvanas@gmail.com)",
-  "license": "MIT",
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "rimraf": "^2.6.2",
-    "webpack": "^4.9.1",
-    "webpack-cli": "^2.1.4"
-  },
-  "dependencies": {},
-  "scripts": {
-    "build": "rimraf lib && webpack --env=development",
-    "build:prod": "rimraf lib && webpack --env=production"
-  }
+    "name": "daemonite-material-additions",
+    "version": "1.0.1",
+    "description": "Additional modules for Daemonite's Material Bootstrap",
+    "main": "index.js",
+    "repository": "https://github.com/NotQuiteZen/daemonite-material-additions",
+    "author": "Milan van As (milanvanas@gmail.com)",
+    "license": "MIT",
+    "engines": {
+        "node": ">=8.0.0"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.4",
+        "babel-preset-env": "^1.7.0",
+        "rimraf": "^2.6.2",
+        "webpack": "^4.9.1",
+        "webpack-cli": "^2.1.4"
+    },
+    "dependencies": {},
+    "scripts": {
+        "build": "rimraf lib && webpack --env=development",
+        "build:prod": "rimraf lib && webpack --env=production",
+        "dev": "yarn build:prod && rimraf ./dev/dist/ && webpack --config ./dev/webpack.config.js --watch"
+    }
 }

@@ -1,3 +1,5 @@
+import Element from './Inc/Element';
+
 /**
  *
  */
@@ -9,7 +11,6 @@ export default class Snackbar {
      */
     static render(settings_) {
 
-
         // Set defaults
         let settings = Object.assign({}, {
             timeout: 4000,
@@ -20,12 +21,12 @@ export default class Snackbar {
         let snackbar = this.generateSnackbarComponent(settings);
 
         // Append it to the body
-        document.body.appendChild(snackbar);
+        snackbar.appendTo(document.body);
 
         // Added the show class for the animation
         // Delegation because
         setTimeout(() => {
-            snackbar.classList.add('show');
+            snackbar.addClass('show');
         }, 1);
 
         // Do we have a timeout?
@@ -33,7 +34,7 @@ export default class Snackbar {
 
             // Set the timeout to remove the snackbar
             setTimeout(() => {
-                snackbar.classList.remove('show');
+                snackbar.removeClass('show');
                 setTimeout(() => snackbar.remove(), 200);
             }, settings.timeout);
         }
@@ -45,36 +46,19 @@ export default class Snackbar {
      */
     static generateSnackbarComponent(settings) {
 
-        // Build the main div
-        let snackbar = document.createElement('div');
-        snackbar.classList.add('snackbar');
-
-        // Build the body div
-        let snackbarBody = document.createElement('div');
-        snackbarBody.classList.add('snackbar-body');
-        snackbarBody.innerHTML = settings.html;
+        let snackbar = new Element('div', null, {class: 'snackbar'});
+        let snackbarBody = new Element('div', settings.html, {class: 'snackbar-body'});
 
         // Add classes
         if (settings.classes) {
-
-            // Normalize to an array
-            if (typeof settings.classes === 'string') {
-                settings.classes = settings.classes.split(' ');
-            }
-
-            // Iterate
-            settings.classes.forEach(function (className) {
-                snackbar.classList.add(className);
-            });
-
+            snackbar.addClass(settings.classes);
         }
 
-        // Add snackbarBody to the snackbar
-        snackbar.appendChild(snackbarBody);
+        snackbarBody.appendTo(snackbar);
 
         // Add the button
         if (settings.button) {
-            snackbar.innerHTML += settings.button;
+            snackbar.appendHtml(settings.button);
         }
 
         return snackbar;
